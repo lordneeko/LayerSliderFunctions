@@ -1,0 +1,16 @@
+function( event, slider ) {
+    var slideCount = slider.data.slides.count;
+    console.log('slideCount: ' + slideCount);
+    var testString = "";
+    for (i = 1; i <= slideCount; i++) {
+        console.log(slider.data.slides[i]);
+        testString = slider.data.slides[i].data.thumbnail;
+        if (!(testString.indexOf('[image-url]') == -1)) {
+            console.log('Slide number ' + i + ' is bad man.')
+            //console.log(slider.data.slides[i].data);
+            slider.data.slides[i].data.duration = 0;
+
+        }
+    }
+
+}
